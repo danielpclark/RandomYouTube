@@ -1,0 +1,18 @@
+RandomYouTube
+by Daniel P. Clark
+
+Require's linux with the 'shuf' executable in path and your words dictionary at /usr/share/dict/words
+
+gem install randomyoutube --no-rdoc --no-ri
+
+Description
+* Grab 3 words randomly from the system dictionary and pull a youtube video link with those words.
+
+    require 'randomyoutube'
+    
+    RandomYouTube::human        # One search. Human readable output on success, or failure.
+    RandomYouTube::human_must   # Search until success, human readable output.
+    RandomYouTube::pretty       # One search. Array on success, nil on failure.
+    RandomYouTube::pretty_must  # Search until success, returns array.
+    RandomYouTube::raw          # One search. Array on success, nil on failure.
+    RandomYouTube::raw_must     # Search until success, returns array.
