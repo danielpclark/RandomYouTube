@@ -17,6 +17,9 @@ module RandomYouTube
   
   def self.local_exec
     @mywords = `#{THREE_WORDS}`
+    if $? != 0
+      raise "Error! '#{THREE_WORDS}' failed.\nSet RandomYouTube::THREE_WORDS to a valid shell script for random words."
+    end
     @mywords = @mywords.strip_byac(ACC_CHARS).split("\n")
     urlsearch = REQUESTOR + @mywords.join('+')
     Nokogiri::XML(open(urlsearch))
